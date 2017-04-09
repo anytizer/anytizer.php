@@ -19,26 +19,40 @@ class spl_include
 	{
 		$this->path = realpath($path);
 	}
+
+    /**
+     * Class file name is: class.name.inc.php
+     *
+     * @param string $class_name
+     * @return string
+     */
+	private function inc_dot_name(string $class_name): string
+    {
+        $class_file_name = "class.{$class_name}.inc.php";
+        return $class_file_name;
+    }
 	
 	/**
 	 * For namespace based class names access
 	 *
-     * @param string $class
+     * @param string $class_name
      */
-	public function namespaced_inc_dot(string $class)
+	public function namespaced_inc_dot(string $class_name)
 	{
-		$chunks = explode("\\", $class);
+		$chunks = explode("\\", $class_name);
 
 		/**
 		 * From the last word
 		 */
-		$class = array_pop($chunks);
+		$class_name = array_pop($chunks);
 		
 		$namespace = implode("/", $chunks);
 		if(!$namespace) $namespace = ".";
 
+        $class_file_name = $this->inc_dot_name($class_name);
+
 		$path = $this->path;
-		$file = "{$path}/{$namespace}/class.{$class}.inc.php";
+		$file = "{$path}/{$namespace}/{$class_file_name}";
 		
 		if(is_file($file))
 		{
