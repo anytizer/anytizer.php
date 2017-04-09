@@ -24,11 +24,12 @@ class validation_rules
      * @example $clean = (new validation_rules($dirty))->money;
      * @example $clean = (new validation_rules($dirty))->phone;
      * @example $clean = (new validation_rules($dirty))->digits;
+     * @example $clean = (new validation_rules($dirty))->boolean;
      *
      * @param string $name
      * @return mixed|string
      */
-    public function __get(string $name): string
+    public function __get(string $name)
     {
         $output = "";
         $method = "_rule_{$name}";
@@ -183,5 +184,28 @@ class validation_rules
         }
 
         return $yn;
+    }
+
+    /**
+     * true/false Boolean
+     *
+     * @return bool
+     */
+    private function _rule_boolean(): bool
+    {
+        $boolean = false;
+
+        $input = strtoupper($this->value);
+        switch($input)
+        {
+            case "T":
+            case "Y":
+            case "YES":
+            case "TRUE":
+                $boolean = true;
+                break;
+        }
+
+        return $boolean;
     }
 }

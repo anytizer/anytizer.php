@@ -7,10 +7,22 @@ validation\phonenumber
  [x] Phone number plus sign no repeat
  [x] Phone number is trimmed non leading plus sign
 
+tests\backend\validation\rulesBoolean
+ [x] Character true
+ [x] Text true
+ [x] Text false
+ [x] Others false
+
 tests\backend\validation\rulesCase
  [x] Lower not equal upper
  [x] Upper case validation rule
  [x] Lower case validation rule
+
+tests\backend\validation\rulesDate
+ [ ] Date
+
+tests\backend\validation\rules
+ [x] Digits only validation rule
 
 tests\backend\validation\rulesEmail
  [x] Email format
@@ -29,9 +41,6 @@ tests\backend\validation\rulesPostalCode
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
-
-tests\backend\validation\rules
- [x] Digits only validation rule
 
 tests\backend\validation\rulesYesNo
  [x] Yes no says yes
