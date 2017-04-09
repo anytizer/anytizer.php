@@ -1,0 +1,14 @@
+{
+  "name": "anytizer/anytizer",
+  "description": "Input sanitizer library for PHP",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.0"
+  }
+}

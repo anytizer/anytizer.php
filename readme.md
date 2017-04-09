@@ -1,6 +1,6 @@
 # anytizer.php
 
-PHP Library to sanitize input.
+Input sanitizer library for PHP.
 
 Similar property access like .net properties.
 
