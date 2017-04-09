@@ -18,6 +18,9 @@ class validation_rules
 
     /**
      * Converts a user data into proper format
+     *
+     * Do NOT type-hint return type due to different types are possible
+     *
      * @example $clean = (new validation_rules($dirty))->postalcode;
      * @example $clean = (new validation_rules($dirty))->fullname;
      * @example $clean = (new validation_rules($dirty))->email;
@@ -27,7 +30,7 @@ class validation_rules
      * @example $clean = (new validation_rules($dirty))->boolean;
      *
      * @param string $name
-     * @return mixed|string
+     * @return mixed|string|boolean
      */
     public function __get(string $name)
     {
@@ -111,6 +114,7 @@ class validation_rules
      * @todo Convert to Double as well
      * @todo Use Money Format
      * @todo Prevent digits change in last position - while fixing/rounding
+     * @todo Non-functional due to floating points
      * @see http://php.net/manual/en/function.money-format.php
      * @see http://floating-point-gui.de/languages/php/
      * @return float

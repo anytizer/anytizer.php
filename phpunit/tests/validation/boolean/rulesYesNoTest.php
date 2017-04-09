@@ -17,6 +17,7 @@ class rulesYesNoTest extends TestCase
     {
         $dirty = "yEs";
         $expect = "Y";
+
         $clean = (new validation_rules($dirty))->yn;
 
         $this->assertEquals($expect,  $clean);
@@ -26,6 +27,7 @@ class rulesYesNoTest extends TestCase
     {
         $dirty = "no";
         $expect = "N";
+
         $clean = (new validation_rules($dirty))->yn;
 
         $this->assertEquals($expect,  $clean);
@@ -35,6 +37,7 @@ class rulesYesNoTest extends TestCase
     {
         $dirty = "";
         $expect = "N";
+
         $clean = (new validation_rules($dirty))->yn;
 
         $this->assertEquals($expect,  $clean);

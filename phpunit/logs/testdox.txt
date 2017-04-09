@@ -1,3 +1,19 @@
+tests\backend\validation\rulesBoolean
+ [x] T character is true
+ [x] Y character is true
+ [x] Tex true ist true
+ [x] Null is false
+ [x] False text is false
+ [x] Other texts are false
+
+tests\backend\validation\rulesYesNo
+ [x] Yes no says yes
+ [x] Yes no says no
+ [x] Yes no unidentified says no
+
+tests\backend\validation\rulesDate
+ [ ] Date
+
 validation\phonenumber
  [x] Phone number validation rule one
  [x] Phone number validation rule two
@@ -7,22 +23,19 @@ validation\phonenumber
  [x] Phone number plus sign no repeat
  [x] Phone number is trimmed non leading plus sign
 
-tests\backend\validation\rulesBoolean
- [x] Character true
- [x] Text true
- [x] Text false
- [x] Others false
+tests\backend\validation\rules
+ [x] Digits only validation rule
+
+validation\rulesMoney
+ [ ] Money format medium float
+ [ ] Money format small float
+ [ ] Money format large float
+ [x] Money format decimal
 
 tests\backend\validation\rulesCase
  [x] Lower not equal upper
  [x] Upper case validation rule
  [x] Lower case validation rule
-
-tests\backend\validation\rulesDate
- [ ] Date
-
-tests\backend\validation\rules
- [x] Digits only validation rule
 
 tests\backend\validation\rulesEmail
  [x] Email format
@@ -31,19 +44,8 @@ tests\backend\validation\rulesFullName
  [x] Full name initials capitalized
  [x] Full name no extra spaces in names
 
-validation\rulesMoney
- [ ] Money format medium float
- [ ] Money format small float
- [ ] Money format large float
- [x] Money format decimal
-
 tests\backend\validation\rulesPostalCode
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
-
-tests\backend\validation\rulesYesNo
- [x] Yes no says yes
- [x] Yes no says no
- [x] Yes no unidentified says no
 

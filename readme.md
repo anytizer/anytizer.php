@@ -22,3 +22,7 @@ Similar property access like .net properties.
 
 ### Others
   - Date, Time
+
+## Installation
+
+  `composer require anytizer/anytizer`

@@ -13,33 +13,54 @@ class rulesBooleanTest extends TestCase
     {
     }
 
-    public function testCharacterTrue()
+    public function testTCharacterIsTrue()
+    {
+        $dirty = " T";
+
+        $clean = (new validation_rules($dirty))->boolean;
+
+        $this->assertTrue($clean);
+    }
+
+    public function testYCharacterIsTrue()
     {
         $dirty = "Y ";
+
         $clean = (new validation_rules($dirty))->boolean;
 
         $this->assertTrue($clean);
     }
 
-    public function testTextTrue()
+    public function testTexTrueIstTrue()
     {
         $dirty = "trUe";
+
         $clean = (new validation_rules($dirty))->boolean;
 
         $this->assertTrue($clean);
     }
 
-    public function testTextFalse()
+    public function testNullIsFalse()
     {
-        $dirty = " falSe ";
+        $dirty = null;
         $clean = (new validation_rules($dirty))->boolean;
 
         $this->assertFalse($clean);
     }
 
-    public function testOthersFalse()
+    public function testFalseTextIsFalse()
+    {
+        $dirty = " falSe ";
+
+        $clean = (new validation_rules($dirty))->boolean;
+
+        $this->assertFalse($clean);
+    }
+
+    public function testOtherTextsAreFalse()
     {
         $dirty = "unknown";
+
         $clean = (new validation_rules($dirty))->boolean;
 
         $this->assertFalse($clean);
