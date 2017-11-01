@@ -1,10 +1,10 @@
 # anytizer.php
 
-Input sanitizer library for PHP. Similar property access like .net properties. This tries to extract the value from the user input into the format available.
+Input sanitizer library for PHP. Similar to property access as in .net properties.
+This tries to extract the value from the user input into the format available.
 
 Usage Example:
 
-    <?php
     $phone = (new validation_rule("000-000-0000"))->phone;
     $phone = (new validation_rule($_POST["phone"]))->phone;
 
