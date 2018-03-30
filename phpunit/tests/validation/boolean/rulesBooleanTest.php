@@ -31,7 +31,7 @@ class rulesBooleanTest extends TestCase
         $this->assertTrue($clean);
     }
 
-    public function testTexTrueIstTrue()
+    public function testTextMultiCasedTrueIsTrue()
     {
         $dirty = "trUe";
 

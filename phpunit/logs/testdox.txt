@@ -1,7 +1,7 @@
 tests\backend\validation\rulesBoolean
  [x] T character is true
  [x] Y character is true
- [x] Tex true ist true
+ [x] Text multi cased true is true
  [x] Null is false
  [x] False text is false
  [x] Other texts are false
@@ -12,7 +12,7 @@ tests\backend\validation\rulesYesNo
  [x] Yes no unidentified says no
 
 tests\backend\validation\rulesDate
- [ ] Date
+ [x] Date
 
 validation\phonenumber
  [x] Phone number validation rule one
@@ -28,7 +28,7 @@ tests\backend\validation\rules
 
 validation\rulesMoney
  [ ] Money format medium float
- [ ] Money format small float
+ [x] Money format small float
  [ ] Money format large float
  [x] Money format decimal
 

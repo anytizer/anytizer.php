@@ -6,7 +6,7 @@ namespace test;
  */
 require_once("tests.local/vendor/autoload.php");
 
-use common\validation_rules;
+use anytizer\sanitize;
 
 $data = new sanitize("Raw Phone: 000-000-0000");
 echo "Phone Number: ", $data->phone;

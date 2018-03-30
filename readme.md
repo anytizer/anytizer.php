@@ -13,7 +13,7 @@ Usage Example:
 
 ## Validations
 
-It supports different kinds of validations as defined in `_rule_NAME()` where `NAME` is your validation name. See class file: class.validation_rules.inc.php. You can add your own method to expand the feature.
+It supports different kinds of validations as defined in `_rule_NAME()` where `NAME` is your validation name. See class file: [sanitize.php](src/anytizer/sanitize.php). You can add your own method to expand the feature.
 
 
 ### Numeric

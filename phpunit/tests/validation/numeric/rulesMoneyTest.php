@@ -13,12 +13,11 @@ class rulesMoneyTest extends TestCase
     public function testMoneyFormatMediumFloat()
     {
         $dirty = "$8,234.0950";
-        $expect = 8234.09;
+        $expect = 8234.09; // .10
 
         $clean = (new validation_rules($dirty))->money;
 
-		#$this->assertEquals($expect,  $clean);
-        $this->markTestIncomplete();
+		$this->assertEquals($expect,  $clean);
     }
 
     public function testMoneyFormatSmallFloat()
@@ -28,19 +27,17 @@ class rulesMoneyTest extends TestCase
 
         $clean = (new validation_rules($dirty))->money;
 
-        #$this->assertEquals($expect,  $clean);
-        $this->markTestIncomplete();
+        $this->assertEquals($expect,  $clean);
     }
 
     public function testMoneyFormatLargeFloat()
     {
         $dirty = "$8,234.0970";
-        $expect = 8234.09;
+        $expect = 8234.09; // .10
 
         $clean = (new validation_rules($dirty))->money;
 
-        #$this->assertEquals($expect,  $clean);
-        $this->markTestIncomplete();
+        $this->assertEquals($expect,  $clean);
     }
 	
 	public function testMoneyFormatDecimal()

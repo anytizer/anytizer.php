@@ -28,6 +28,7 @@ class sanitize
      * @example $clean = (new sanitize($dirty))->phone;
      * @example $clean = (new sanitize($dirty))->digits;
      * @example $clean = (new sanitize($dirty))->boolean;
+     * @example $clean = (new sanitize($dirty))->date;
      *
      * @param string $name
      * @return mixed|string|boolean
@@ -121,6 +122,22 @@ class sanitize
     }
 
     /**
+     * Date formatting
+     * @return string
+     */
+    private function _rule_date(): string
+    {
+        $date = $this->value;
+
+        $date = preg_replace("/[^0-9\-]/is", "", $date);
+        if(!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/is", $date))
+        {
+            $date = "0000-00-00";
+        }
+        return $date;
+    }
+
+    /**
      * @todo Convert to Double as well
      * @todo Use Money Format
      * @todo Prevent digits change in last position - while fixing/rounding
@@ -132,12 +149,8 @@ class sanitize
     private function _rule_money(): float
     {
         $money = $this->value;
-
-        $money = (float)preg_replace("/[^0-9\\.]/is", "", $money);
-        // $money = round($money, 2); // works, but likely to change the last digits
-        $money = number_format($money, 2, ".", ""); // has too many floating points
-        // $money = preg_replace("/([0-9]{1,})\\.([0-9]{2})(.*?)$/is", "\$1.\$2", $money);
-
+        $money = preg_replace("/[^0-9\.]/is", "", $money);
+        $money = number_format($money, 2, ".", "");
         // Auto parsed to float due to return type typed in as hint
         return $money;
     }
