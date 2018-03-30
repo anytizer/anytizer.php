@@ -1,12 +1,10 @@
 {
-  "name": "anytizer/anytizer",
-  "description": "Input sanitizer library for PHP",
-  "authors": [
-    {
-      "role": "Developer"
-    }
-  ],
+  "name": "anytizer/anytizer.php",
+  "description": "Input sanitization library for PHP",
   "require": {
     "php": "^7.0"
+  },
+  "autoload": {
+	"anytizer\\": "src/anytizer"
   }
 }
