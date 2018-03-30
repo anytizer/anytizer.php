@@ -2,3 +2,4 @@
 /**/*.phar
 /tests.local/composer.lock
 /tests.local/vendor
+/phpunit/vendor
