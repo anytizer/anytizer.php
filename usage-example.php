@@ -18,7 +18,5 @@ else
 
 use common\validation_rules;
 
-$validation_rules = new validation_rules("Raw Phone: 000-000-0000");
-# print_r($vr);
-
-echo "Phone Number: ", $validation_rules->phone;
+$data = new sanitize("Raw Phone: 000-000-0000");
+echo "Phone Number: ", $data->phone;
