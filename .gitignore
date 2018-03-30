@@ -3,3 +3,5 @@
 /tests.local/composer.lock
 /tests.local/vendor
 /phpunit/vendor
+/tests.remote/composer.lock
+/tests.remote/vendor
