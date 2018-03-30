@@ -2,7 +2,7 @@
 namespace tests\backend\validation;
 
 use PHPUnit\Framework\TestCase;
-use common\validation_rules;
+use anytizer\sanitize as validation_rules;
 
 class rulesEmailTest extends TestCase
 {

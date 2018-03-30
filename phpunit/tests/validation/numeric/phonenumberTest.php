@@ -2,8 +2,8 @@
 namespace validation;
 
 use PHPUnit\Framework\TestCase;
-use common\server_side_validator;
-use common\validation_rules;
+//use common\server_side_validator;
+use anytizer\sanitize as validation_rules;
 
 /**
  * Sanitize phone number
