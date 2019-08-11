@@ -21,6 +21,7 @@ class sanitize
      *
      * Do NOT type-hint return type due to different types are possible
      *
+     * @example $clean = (new sanitize($dirty))->text;
      * @example $clean = (new sanitize($dirty))->postalcode;
      * @example $clean = (new sanitize($dirty))->fullname;
      * @example $clean = (new sanitize($dirty))->email;
@@ -101,6 +102,16 @@ class sanitize
         $fullname = implode(" ", $names); // back
 
         return $fullname;
+    }
+    
+    /**
+     * Text
+     */
+    private function _rule_text(): string
+    {
+        $text = strip_tags($this->value);
+        
+        return $text;
     }
 
     /**
