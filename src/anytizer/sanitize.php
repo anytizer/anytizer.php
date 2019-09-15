@@ -106,10 +106,11 @@ class sanitize
     
     /**
      * Text
+     * @todo Instead of striping html tags, return text after removing the angular brackets.
      */
     private function _rule_text(): string
     {
-        $text = strip_tags($this->value);
+        $text = trim(strip_tags($this->value));
         
         return $text;
     }
@@ -147,7 +148,7 @@ class sanitize
         }
         return $date;
     }
-
+    
     /**
      * @todo Convert to Double as well
      * @todo Use Money Format
@@ -181,7 +182,7 @@ class sanitize
     }
 
     /**
-     * Postal Code
+     * Postal Code: A1A 1A1
      * @return string
      */
     private function _rule_postalcode(): string
