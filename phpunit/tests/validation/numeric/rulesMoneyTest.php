@@ -6,17 +6,18 @@ use anytizer\sanitize as validation_rules;
 
 class rulesMoneyTest extends TestCase
 {
-	public function setup()
+	public function setup(): void
 	{
 	}
 	
     public function testMoneyFormatMediumFloat()
     {
         $dirty = "$8,234.0950";
-        $expect = 8234.09; // .10
+        $expect = 8234.10; // .09
 
         $clean = (new validation_rules($dirty))->money;
 
+        //$this->markTestIncomplete("Formatting error");
 		$this->assertEquals($expect,  $clean);
     }
 
@@ -33,7 +34,7 @@ class rulesMoneyTest extends TestCase
     public function testMoneyFormatLargeFloat()
     {
         $dirty = "$8,234.0970";
-        $expect = 8234.09; // .10
+        $expect = 8234.10; // .09
 
         $clean = (new validation_rules($dirty))->money;
 

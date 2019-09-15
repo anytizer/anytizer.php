@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class rulesDateTest extends TestCase
 {
-    public function setup()
+    public function setup(): void
     {
     }
 

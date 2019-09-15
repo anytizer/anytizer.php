@@ -6,14 +6,23 @@ use anytizer\sanitize as validation_rules;
 
 class rulesTextTest extends TestCase
 {
-    public function setup()
+    public function setup(): void
     {
     }
 
-    public function testPostalCode()
+    public function testTextHtml()
     {
-        $dirty = " <a>b";
-        $expect = "ab";
+        $dirty = " <a>b ";
+        $expect = "b";
+        $clean = (new validation_rules($dirty))->text;
+
+        $this->assertEquals($expect,  $clean);
+    }
+
+    public function testText()
+    {
+        $dirty = "b";
+        $expect = "b";
         $clean = (new validation_rules($dirty))->text;
 
         $this->assertEquals($expect,  $clean);

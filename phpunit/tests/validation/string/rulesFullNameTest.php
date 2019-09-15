@@ -6,7 +6,7 @@ use anytizer\sanitize as validation_rules;
 
 class rulesFullNameTest extends TestCase
 {
-    public function setup()
+    public function setup(): void
     {
     }
 

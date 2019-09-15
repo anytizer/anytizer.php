@@ -5,3 +5,6 @@
 /phpunit/vendor
 /tests.remote/composer.lock
 /tests.remote/vendor
+/nbproject/private/
+/nbproject
+/phpunit/.phpunit.result.cache

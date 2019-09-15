@@ -9,7 +9,7 @@ use anytizer\sanitize as validation_rules;
  */
 class rulesCaseTest extends TestCase
 {
-    public function setup()
+    public function setup(): void
     {
     }
 

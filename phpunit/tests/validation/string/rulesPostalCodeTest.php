@@ -6,7 +6,7 @@ use anytizer\sanitize as validation_rules;
 
 class rulesPostalCodeTest extends TestCase
 {
-    public function setup()
+    public function setup(): void
     {
     }
 

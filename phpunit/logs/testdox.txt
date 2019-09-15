@@ -27,9 +27,9 @@ tests\backend\validation\rules
  [x] Digits only validation rule
 
 validation\rulesMoney
- [ ] Money format medium float
+ [x] Money format medium float
  [x] Money format small float
- [ ] Money format large float
+ [x] Money format large float
  [x] Money format decimal
 
 tests\backend\validation\rulesCase
@@ -48,4 +48,8 @@ tests\backend\validation\rulesPostalCode
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
+
+tests\backend\validation\rulesText
+ [x] Text html
+ [x] Text
 

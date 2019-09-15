@@ -10,7 +10,7 @@ use anytizer\sanitize as validation_rules;
  */
 class phonenumberTest extends TestCase
 {
-	public function setup()
+	public function setup(): void
 	{
 	}
 	
