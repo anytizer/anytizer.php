@@ -14,6 +14,9 @@ tests\backend\validation\rulesYesNo
 tests\backend\validation\rulesDate
  [x] Date
 
+validation\exotic
+ [x] User name rule one
+
 validation\phonenumber
  [x] Phone number validation rule one
  [x] Phone number validation rule two
@@ -52,4 +55,6 @@ tests\backend\validation\rulesPostalCode
 tests\backend\validation\rulesText
  [x] Text html
  [x] Text
+ [x] Upper text
+ [x] Lower text
 

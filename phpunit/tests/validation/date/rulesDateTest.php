@@ -17,8 +17,8 @@ class rulesDateTest extends TestCase
      */
     public function testDate()
     {
-        $dirty = "2010-10-10";
+        $dirty = "2011-12-13";
         $data = (new sanitize($dirty))->date;
-        $this->assertEquals("2010-10-10", $data);
+        $this->assertEquals("2011-12-13", $data);
     }
 }

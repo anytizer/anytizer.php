@@ -76,7 +76,10 @@ class sanitize
     }
 
     /**
-     * Alphabets, numerals etc. only as username
+     * Alphabets, numerals and selected symbols as username
+     * Alphabets: A-Z, a-z
+     * Numerals: 0-9
+     * Symbols supported: @ . - _
      * @return mixed
      */
     private function _rule_username(): string
@@ -95,7 +98,6 @@ class sanitize
     {
         $fullname = strtolower($this->value);
         $fullname = preg_replace("/[^\\.\\-\\ a-zA-Z]/is", "", $fullname);
-        $fullname = trim($fullname);
         $fullname = preg_replace("/\\s+/is", " ", $fullname); // remove spaces
         $names = preg_split("/[\\ ]/is", $fullname); // wordify
         $names = array_map("ucfirst", $names); // ucfirst
@@ -146,6 +148,7 @@ class sanitize
         {
             $date = "0000-00-00";
         }
+
         return $date;
     }
     
