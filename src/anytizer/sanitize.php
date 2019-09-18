@@ -97,11 +97,12 @@ class sanitize
     private function _rule_fullname(): string
     {
         $fullname = $this->value;
-        //$fullname = strtolower($this->value);
+        $fullname = strtolower($this->value); // may result in loss
         $fullname = preg_replace("/[^\\.\\-\\ a-zA-Z]/is", "", $fullname);
         $fullname = preg_replace("/\[\s]+/is", " ", $fullname); // remove spaces
         $names = preg_split("/[\s]+/is", $fullname); // wordify
         $names = array_filter($names);
+        #print_r($names);
         $names = array_map("ucfirst", $names); // ucfirst
         $fullname = implode(" ", $names); // back
 
@@ -145,6 +146,8 @@ class sanitize
     {
         $date = $this->value;
 
+        $date = preg_replace("/\//is", "-", $date);
+
         $date = preg_replace("/[^0-9\-]/is", "", $date);
         if(!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/is", $date))
         {
@@ -161,6 +164,8 @@ class sanitize
     private function _rule_datetime(): string
     {
         $datetime = $this->value;
+
+        $datetime = preg_replace("/\//", "-", $datetime);
 
         $datetime = preg_replace("/[^0-9\-\:\ ]/is", "", $datetime);
         if(!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}\:[0-9]{2}\:[0-9]{2}$/is", $datetime))

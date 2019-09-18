@@ -12,8 +12,10 @@ tests\backend\validation\rulesYesNo
  [x] Yes no unidentified says no
 
 tests\backend\validation\rulesDate
- [x] Date
- [ ] Date time
+ [x] Date 1
+ [x] Date 2
+ [x] Date time 1
+ [x] Date time 2
 
 validation\exotic
  [x] User name rule one
@@ -46,7 +48,7 @@ tests\backend\validation\rulesEmail
 
 tests\backend\validation\rulesFullName
  [x] Full name initials capitalized
- [ ] Full name no extra spaces in names
+ [x] Full name no extra spaces in names
 
 tests\backend\validation\rulesPostalCode
  [x] Postal code
