@@ -21,4 +21,11 @@ class rulesDateTest extends TestCase
         $data = (new sanitize($dirty))->date;
         $this->assertEquals("2011-12-13", $data);
     }
+
+    public function testDateTime()
+    {
+        $dirty = "2011-12-13 14:15:16";
+        $data = (new sanitize($dirty))->datetime;
+        $this->assertEquals("2011-12-13 14:15:16", $data);
+    }
 }

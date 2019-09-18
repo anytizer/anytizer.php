@@ -96,10 +96,12 @@ class sanitize
      */
     private function _rule_fullname(): string
     {
-        $fullname = strtolower($this->value);
+        $fullname = $this->value;
+        //$fullname = strtolower($this->value);
         $fullname = preg_replace("/[^\\.\\-\\ a-zA-Z]/is", "", $fullname);
-        $fullname = preg_replace("/\\s+/is", " ", $fullname); // remove spaces
-        $names = preg_split("/[\\ ]/is", $fullname); // wordify
+        $fullname = preg_replace("/\[\s]+/is", " ", $fullname); // remove spaces
+        $names = preg_split("/[\s]+/is", $fullname); // wordify
+        $names = array_filter($names);
         $names = array_map("ucfirst", $names); // ucfirst
         $fullname = implode(" ", $names); // back
 
@@ -150,6 +152,23 @@ class sanitize
         }
 
         return $date;
+    }
+
+    /**
+     * DateTime formatting
+     * @return string
+     */
+    private function _rule_datetime(): string
+    {
+        $datetime = $this->value;
+
+        $datetime = preg_replace("/[^0-9\-\:\ ]/is", "", $datetime);
+        if(!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}\:[0-9]{2}\:[0-9]{2}$/is", $datetime))
+        {
+            $datetime = "0000-00-00 00:00:00";
+        }
+
+        return $datetime;
     }
     
     /**

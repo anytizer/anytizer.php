@@ -13,6 +13,7 @@ tests\backend\validation\rulesYesNo
 
 tests\backend\validation\rulesDate
  [x] Date
+ [ ] Date time
 
 validation\exotic
  [x] User name rule one
@@ -45,7 +46,7 @@ tests\backend\validation\rulesEmail
 
 tests\backend\validation\rulesFullName
  [x] Full name initials capitalized
- [x] Full name no extra spaces in names
+ [ ] Full name no extra spaces in names
 
 tests\backend\validation\rulesPostalCode
  [x] Postal code
