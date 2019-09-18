@@ -236,13 +236,12 @@ class sanitize
         $yesno = strtoupper($this->value);
         switch($yesno)
         {
+            case "1":
+            case "T":
             case "Y":
             case "YES":
+            case "TRUE":
                 $yn = "Y";
-                break;
-            case "N":
-            case "NO":
-                $yn = "N";
                 break;
             default:
                 // error
@@ -264,6 +263,7 @@ class sanitize
         $input = strtoupper($this->value);
         switch($input)
         {
+            case "1":
             case "T":
             case "Y":
             case "YES":
