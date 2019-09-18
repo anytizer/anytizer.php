@@ -8,3 +8,7 @@
 /nbproject/private/
 /nbproject
 /phpunit/.phpunit.result.cache
+/vendor
+/tests.global
+/tests.local
+/tests.remote

@@ -1,3 +1,0 @@
-# Installation
-
-	composer dump-autoload
