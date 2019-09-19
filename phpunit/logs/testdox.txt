@@ -44,7 +44,8 @@ tests\backend\validation\rulesCase
  [x] Lower case validation rule
 
 tests\backend\validation\rulesCode
- [ ] Code
+ [x] Code in upper case access
+ [x] Code in lower case access
 
 tests\backend\validation\rulesEmail
  [x] Email format

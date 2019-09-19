@@ -224,7 +224,12 @@ class sanitize
         return $postalcode;
     }
 
-    private function rule_code(): string
+    /**
+     * Capitalized single word
+     * eg. id 07 => ID07
+     * @return string
+     */
+    private function _rule_code(): string
     {
         $CODE = strtoupper($this->value);
         $CODE = preg_replace("/\s+/is", "", $CODE);
