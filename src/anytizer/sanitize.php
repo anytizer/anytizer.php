@@ -224,6 +224,14 @@ class sanitize
         return $postalcode;
     }
 
+    private function rule_code(): string
+    {
+        $CODE = strtoupper($this->value);
+        $CODE = preg_replace("/\s+/is", "", $CODE);
+
+        return $CODE;
+    }
+
     /**
      * Yes "Y" or "N" for enumerated boolean decisions
      *

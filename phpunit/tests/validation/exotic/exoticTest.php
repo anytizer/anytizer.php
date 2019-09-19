@@ -2,7 +2,6 @@
 namespace validation;
 
 use PHPUnit\Framework\TestCase;
-//use common\server_side_validator;
 use anytizer\sanitize as validation_rules;
 
 /**
