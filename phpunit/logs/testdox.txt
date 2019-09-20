@@ -62,6 +62,7 @@ tests\backend\validation\rulesPostalCode
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
+ [x] Postal code short
 
 tests\backend\validation\rulesText
  [x] Text html

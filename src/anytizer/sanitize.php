@@ -102,7 +102,6 @@ class sanitize
         $fullname = preg_replace("/\[\s]+/is", " ", $fullname); // remove spaces
         $names = preg_split("/[\s]+/is", $fullname); // wordify
         $names = array_filter($names);
-        #print_r($names);
         $names = array_map("ucfirst", $names); // ucfirst
         $fullname = implode(" ", $names); // back
 
@@ -182,8 +181,8 @@ class sanitize
      */
     private function _rule_salt(): string
     {
-       $salt = substr(md5($this->value.date("s:i:H").mt_rand(1000, 9999)), 0, 10);
-       return $salt;
+        $salt = substr(md5($this->value.date("siHmdy").mt_rand(1000, 9999)), 0, 10);
+        return $salt;
     }
     
     /**
@@ -230,23 +229,32 @@ class sanitize
     }
 
     /**
-     * Postal Code: A1A 1A1
+     * Canadian styled Postal Code: A1A 1A1
+     * @todo May happen in data loss for long input
      * @return string
      */
     private function _rule_postalcode(): string
     {
         $postalcode = strtoupper($this->value);
-        if(strlen($postalcode))
+        $postalcode = preg_replace("/[^A-Z0-9]/is", "", $postalcode);
+        if(strlen($postalcode)>=3)
         {
-            $postalcode = preg_replace("/[^A-Z0-9]/is", "", $postalcode);
             $postalcode = preg_replace("/^([A-Z0-9]{3})?(.*?)$/", "\$1 \$2", $postalcode);
+            $postalcode = substr($postalcode, 0, 7);
         }
+
+        /**
+         * Fillup dots for missing postal codes length
+         */
+        $postalcode = str_pad($postalcode, 7, ".", STR_PAD_RIGHT);
+
 
         return $postalcode;
     }
 
     /**
      * Capitalized single word
+     * Usage: SKU, Item Code, etc.
      * eg. id 07 => ID07
      * @return string
      */
@@ -276,9 +284,6 @@ class sanitize
             case "YES":
             case "TRUE":
                 $yn = "Y";
-                break;
-            default:
-                // error
                 break;
         }
 

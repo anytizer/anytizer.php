@@ -31,7 +31,16 @@ class rulesPostalCodeTest extends TestCase
     public function testPostalCodeLong()
     {
         $dirty = "opqr6h4t";
-        $expect = "OPQ R6H4T";
+        $expect = "OPQ R6H";
+        $clean = (new validation_rules($dirty))->postalcode;
+
+        $this->assertEquals($expect,  $clean);
+    }
+
+    public function testPostalCodeShort()
+    {
+        $dirty = "opqr";
+        $expect = "OPQ R..";
         $clean = (new validation_rules($dirty))->postalcode;
 
         $this->assertEquals($expect,  $clean);

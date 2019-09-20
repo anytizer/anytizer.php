@@ -29,8 +29,17 @@ class exoticTest extends TestCase
         $dirty = "username";
 
         $rule = new validation_rules($dirty);
-        $salt = $rule->salt;
+        $salt1 = $rule->salt;
+        $salt2 = $rule->salt;
 
-        $this->assertEquals(10,  strlen($salt));
+        /**
+         * Salt should NOT be same when generated twice
+         */
+        $this->assertFalse($salt1 == $salt2);
+
+        /**
+         * Salt length meets the criteria
+         */
+        $this->assertEquals(10,  strlen($salt1));
     }
 }
