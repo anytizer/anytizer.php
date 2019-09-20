@@ -17,6 +17,9 @@ tests\backend\validation\rulesDate
  [x] Date time 1
  [x] Date time 2
 
+tests\backend\validation\rulesNow
+ [x] Now returns date time
+
 validation\exotic
  [x] User name rule one
 

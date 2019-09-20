@@ -175,6 +175,17 @@ class sanitize
 
         return $datetime;
     }
+
+    /**
+     * Now: Whatever be the input be
+     * Used as SQL Helper to populate datetime flag fields
+     * @return string
+     */
+    private function _rule_now(): string
+    {
+        $datetime = date("Y-m-d H:i:s");
+        return $datetime;
+    }
     
     /**
      * @todo Convert to Double as well
