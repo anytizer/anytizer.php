@@ -11,6 +11,31 @@ Usage Example:
     $phone = (new sanitize($_POST["phone"]))->phone;
 
 
+## List of access types
+
+On a variable, you can apply the following access types:
+
+- ->upper
+- ->lower
+- ->digits
+- ->money
+- ->username
+- ->fullname
+- ->text
+- ->phone
+- ->date
+- ->datetime
+- ->now
+- ->salt
+- ->email
+- ->postalcode
+- ->code
+- ->yn
+- ->boolean
+
+
+
+
 ## Validations
 
 It supports different kinds of validations as defined in `_rule_NAME()` where `NAME` is your validation name. See class file: [sanitize.php](src/anytizer/sanitize.php). You can add your own method to expand the feature.
@@ -20,7 +45,7 @@ It supports different kinds of validations as defined in `_rule_NAME()` where `N
 
   - Phone Number
   - Digits
-  - Money (incomplete)
+  - Money (incomplete: Rounds the amount)
 
 
 ### Addressing
@@ -38,7 +63,8 @@ It supports different kinds of validations as defined in `_rule_NAME()` where `N
 
 ### Others
 
-  - Date, Time (incomplete)
+  - Date, Time (incomplete), Date Time, Now
+  - Salt
 
 
 ## Installation
@@ -50,3 +76,4 @@ It supports different kinds of validations as defined in `_rule_NAME()` where `N
 
 	Work in progress.
 	Do not use in production environment.
+  Embedded in DTO.php project.

@@ -76,6 +76,24 @@ class sanitize
     }
 
     /**
+     * @todo Convert to Double as well
+     * @todo Use Money Format
+     * @todo Prevent digits change in last position - while fixing/rounding
+     * @todo Non-functional due to floating points
+     * @see http://php.net/manual/en/function.money-format.php
+     * @see http://floating-point-gui.de/languages/php/
+     * @return float
+     */
+    private function _rule_money(): float
+    {
+        $money = $this->value;
+        $money = preg_replace("/[^0-9\.]/is", "", $money);
+        $money = number_format($money, 2, ".", "");
+        // Auto parsed to float due to return type typed in as hint
+        return $money;
+    }
+    
+    /**
      * Alphabets, numerals and selected symbols as username
      * Alphabets: A-Z, a-z
      * Numerals: 0-9
@@ -176,16 +194,6 @@ class sanitize
     }
 
     /**
-     * Random text generator for whatever be the input is.
-     * @return string
-     */
-    private function _rule_salt(): string
-    {
-        $salt = substr(md5($this->value.date("siHmdy").mt_rand(1000, 9999)), 0, 10);
-        return $salt;
-    }
-    
-    /**
      * Now: Whatever be the input be
      * Used as SQL Helper to populate datetime flag fields
      * @return string
@@ -197,22 +205,15 @@ class sanitize
     }
     
     /**
-     * @todo Convert to Double as well
-     * @todo Use Money Format
-     * @todo Prevent digits change in last position - while fixing/rounding
-     * @todo Non-functional due to floating points
-     * @see http://php.net/manual/en/function.money-format.php
-     * @see http://floating-point-gui.de/languages/php/
-     * @return float
+     * Random text generator for whatever be the input is.
+     * @return string
      */
-    private function _rule_money(): float
+    private function _rule_salt(): string
     {
-        $money = $this->value;
-        $money = preg_replace("/[^0-9\.]/is", "", $money);
-        $money = number_format($money, 2, ".", "");
-        // Auto parsed to float due to return type typed in as hint
-        return $money;
+        $salt = substr(md5($this->value.date("siHmdy").mt_rand(1000, 9999)), 0, 10);
+        return $salt;
     }
+    
 
     /**
      * Email format
