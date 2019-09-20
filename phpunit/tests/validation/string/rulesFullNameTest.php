@@ -23,8 +23,17 @@ class rulesFullNameTest extends TestCase
 
     public function testFullNameNoExtraSpacesInNames()
     {
-        $dirty = " 5 mrs. jane  do E 6 "; // multi-spaced with numerals
+        $dirty = " 5 mrs.  jane   do E 6 "; // multi-spaced with numerals
         $expect = "Mrs. Jane Do E";
+        $clean = (new validation_rules($dirty))->fullname;
+
+        $this->assertEquals($expect,  $clean);
+    }
+
+    public function testFullNameCapitalizedMiddleWords()
+    {
+        $dirty = "pieter mc. philips";
+        $expect = "Pieter Mc. Philips";
         $clean = (new validation_rules($dirty))->fullname;
 
         $this->assertEquals($expect,  $clean);

@@ -53,16 +53,18 @@ tests\backend\validation\rulesCode
 
 tests\backend\validation\rulesEmail
  [x] Email format
+ [x] Email format numerals
 
 tests\backend\validation\rulesFullName
  [x] Full name initials capitalized
  [x] Full name no extra spaces in names
+ [x] Full name capitalized middle words
 
 tests\backend\validation\rulesPostalCode
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
- [x] Postal code short
+ [x] Short postal code pads with dots
 
 tests\backend\validation\rulesText
  [x] Text html

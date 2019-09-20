@@ -192,7 +192,7 @@ class sanitize
 
         return $datetime;
     }
-
+    
     /**
      * Now: Whatever be the input be
      * Used as SQL Helper to populate datetime flag fields
@@ -214,7 +214,6 @@ class sanitize
         return $salt;
     }
     
-
     /**
      * Email format
      * @return string
@@ -249,13 +248,12 @@ class sanitize
          */
         $postalcode = str_pad($postalcode, 7, ".", STR_PAD_RIGHT);
 
-
         return $postalcode;
     }
 
     /**
      * Capitalized single word
-     * Usage: SKU, Item Code, etc.
+     * Usage: values of: SKU, Item Code, etc.
      * eg. id 07 => ID07
      * @return string
      */

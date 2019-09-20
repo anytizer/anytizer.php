@@ -37,7 +37,7 @@ class rulesPostalCodeTest extends TestCase
         $this->assertEquals($expect,  $clean);
     }
 
-    public function testPostalCodeShort()
+    public function testShortPostalCodePadsWithDots()
     {
         $dirty = "opqr";
         $expect = "OPQ R..";

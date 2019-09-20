@@ -7,3 +7,6 @@ Add password field:
 - symbols used
 - caSe diffErenCes used
 - difficulty levels met
+
+Add:
+- Initcap support

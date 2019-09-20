@@ -19,4 +19,14 @@ class rulesEmailTest extends TestCase
 
         $this->assertEquals($expect,  $clean);
     }
+
+    public function testEmailFormatNumerals()
+    {
+        $dirty = "contact7 @ example.com";
+        $expect = "contact7@example.com";
+
+        $clean = (new validation_rules($dirty))->email;
+
+        $this->assertEquals($expect,  $clean);
+    }
 }
