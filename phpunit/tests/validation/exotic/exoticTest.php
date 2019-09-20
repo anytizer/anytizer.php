@@ -23,4 +23,14 @@ class exoticTest extends TestCase
 
         $this->assertEquals($expect,  $clean);
     }
+
+    public function testSaltGeneration()
+    {
+        $dirty = "username";
+
+        $rule = new validation_rules($dirty);
+        $salt = $rule->salt;
+
+        $this->assertEquals(10,  strlen($salt));
+    }
 }

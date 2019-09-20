@@ -177,6 +177,16 @@ class sanitize
     }
 
     /**
+     * Random text generator for whatever be the input is.
+     * @return string
+     */
+    private function _rule_salt(): string
+    {
+       $salt = substr(md5($this->value.date("s:i:H").mt_rand(1000, 9999)), 0, 10);
+       return $salt;
+    }
+    
+    /**
      * Now: Whatever be the input be
      * Used as SQL Helper to populate datetime flag fields
      * @return string

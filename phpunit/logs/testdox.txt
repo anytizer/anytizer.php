@@ -22,6 +22,7 @@ tests\backend\validation\rulesNow
 
 validation\exotic
  [x] User name rule one
+ [x] Salt generation
 
 validation\phonenumber
  [x] Phone number validation rule one
