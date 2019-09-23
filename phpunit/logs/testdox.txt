@@ -1,4 +1,4 @@
-tests\backend\validation\rulesBoolean
+rules Boolean (tests\backend\validation\rulesBoolean)
  [x] T character is true
  [x] Y character is true
  [x] Text multi cased true is true
@@ -6,25 +6,28 @@ tests\backend\validation\rulesBoolean
  [x] False text is false
  [x] Other texts are false
 
-tests\backend\validation\rulesYesNo
+rules Y (tests\backend\validation\rulesY)
+ [x] Yes no says yes
+
+rules Yes No (tests\backend\validation\rulesYesNo)
  [x] Yes no says yes
  [x] Yes no says no
  [x] Yes no unidentified says no
 
-tests\backend\validation\rulesDate
+rules Date (tests\backend\validation\rulesDate)
  [x] Date 1
  [x] Date 2
  [x] Date time 1
  [x] Date time 2
 
-tests\backend\validation\rulesNow
+rules Now (tests\backend\validation\rulesNow)
  [x] Now returns date time
 
-validation\exotic
+exotic (validation\exotic)
  [x] User name rule one
  [x] Salt generation
 
-validation\phonenumber
+phonenumber (validation\phonenumber)
  [x] Phone number validation rule one
  [x] Phone number validation rule two
  [x] Phone number validation rule three
@@ -33,40 +36,40 @@ validation\phonenumber
  [x] Phone number plus sign no repeat
  [x] Phone number is trimmed non leading plus sign
 
-tests\backend\validation\rules
+rules (tests\backend\validation\rules)
  [x] Digits only validation rule
 
-validation\rulesMoney
+rules Money (validation\rulesMoney)
  [x] Money format medium float
  [x] Money format small float
  [x] Money format large float
  [x] Money format decimal
 
-tests\backend\validation\rulesCase
+rules Case (tests\backend\validation\rulesCase)
  [x] Lower not equal upper
  [x] Upper case validation rule
  [x] Lower case validation rule
 
-tests\backend\validation\rulesCode
+rules Code (tests\backend\validation\rulesCode)
  [x] Code in upper case access
  [x] Code in lower case access
 
-tests\backend\validation\rulesEmail
+rules Email (tests\backend\validation\rulesEmail)
  [x] Email format
  [x] Email format numerals
 
-tests\backend\validation\rulesFullName
+rules Full Name (tests\backend\validation\rulesFullName)
  [x] Full name initials capitalized
  [x] Full name no extra spaces in names
  [x] Full name capitalized middle words
 
-tests\backend\validation\rulesPostalCode
+rules Postal Code (tests\backend\validation\rulesPostalCode)
  [x] Postal code
  [x] Postal code invalid characters
  [x] Postal code long
  [x] Short postal code pads with dots
 
-tests\backend\validation\rulesText
+rules Text (tests\backend\validation\rulesText)
  [x] Text html
  [x] Text
  [x] Upper text

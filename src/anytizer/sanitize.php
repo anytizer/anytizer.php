@@ -266,6 +266,16 @@ class sanitize
     }
 
     /**
+     * Forces Y for database enum Y, for whatever be the input.
+     *
+     * @return string
+     */
+    private function _rule_Y(): string
+    {
+        return "Y";
+    }
+
+    /**
      * Yes "Y" or "N" for enumerated boolean decisions
      *
      * @return string

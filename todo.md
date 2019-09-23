@@ -10,3 +10,5 @@ Add password field:
 
 Add:
 - Initcap support
+- Y for whatever text to match database.
+
